@@ -13,7 +13,7 @@
 #include <X11/Xlib.h>
 
 #define SOCKET_PATH "/tmp/dwm-bar.sock"
-#define MAX_CMDLEN 50
+#define MAX_CMDLEN 100
 #define MAX_BACKLOG 10
 
 #define LENGTH(X) (sizeof(X) / sizeof(X[0]))
