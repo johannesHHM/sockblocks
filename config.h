@@ -11,5 +11,5 @@ Block blocks[] = {
 
 #define left " "
 #define right " "
-#define seperator " ^c#665c54^❘^d^ "
+#define seperator " ^c#665c54^|^d^ "
 
