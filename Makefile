@@ -5,29 +5,29 @@ LDFLAGS := -lX11 -lpthread
 
 LDFLAGS += -L/usr/X11R6/lib -I/usr/X11R6/include
 
-all: options ipcbar
+all: options sblocks
 
 options:
-	@echo ipcbar build options:
+	@echo sblocks build options:
 	@echo "CFLAGS  = ${CFLAGS}"
 	@echo "LDFLAGS = ${LDFLAGS}"
 	@echo "CC      = ${CC}"
 
-ipcbar: ipcbar.c config.h
-	${CC} -o ipcbar ipcbar.c ${CFLAGS} ${LDFLAGS}
+sblocks: sblocks.c config.h
+	${CC} -o sblocks sblocks.c ${CFLAGS} ${LDFLAGS}
 
 blocks.h:
 	cp blocks.def.h $@
 
 clean:
-	rm -f *.o *.gch ipcbar
+	rm -f *.o *.gch sblocks
 
-install: ipcbar
+install: sblocks
 	mkdir -p ${DESTDIR}${PREFIX}/bin
-	cp -f ipcbar ${DESTDIR}${PREFIX}/bin
-	chmod 755 ${DESTDIR}${PREFIX}/bin/ipcbar
+	cp -f sblocks ${DESTDIR}${PREFIX}/bin
+	chmod 755 ${DESTDIR}${PREFIX}/bin/sblocks
 
 uninstall:
-	rm -f ${DESTDIR}${PREFIX}/bin/ipcbar
+	rm -f ${DESTDIR}${PREFIX}/bin/sblocks
 
 .PHONY: all options clean install uninstall
